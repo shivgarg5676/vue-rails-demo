@@ -1,0 +1,1 @@
+basic vue js demo with rails+devise+active_admin
