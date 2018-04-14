@@ -15,4 +15,5 @@ class CoursePage < ApplicationRecord
   validates :name, presence: true
   validates :slug, presence: true, uniqueness: true
   validates :backend_key, presence: true, uniqueness: true
+  has_many :faqs
 end
