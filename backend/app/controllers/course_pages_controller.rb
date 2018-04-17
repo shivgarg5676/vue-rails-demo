@@ -1,8 +1,14 @@
 class CoursePagesController < ApplicationController
   
   before_action :set_course, only: [:show]
+  def initialize
+    @options = {}
+    @options[:include] = [:faqs]
+  end
+  
+  
   def show
-    render :json => @course_page
+    render :json => CoursePageSerializer.new(@course_page, @options).serializable_hash
   end
   
   private 
