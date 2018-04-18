@@ -1,0 +1,8 @@
+panel "History" do
+  table_for assigns[:versions] do
+  column("Item") { |v| v.item}
+	column ("Type") { |v| v.item_type.underscore.humanize }
+	column ("Modified at") { |v| v.created_at.to_s :long }
+	column ("Admin") { |v| link_to AdminUser.find(v.whodunnit).email, [:admin, AdminUser.find(v.whodunnit)] }
+  end
+end

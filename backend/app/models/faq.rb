@@ -15,4 +15,5 @@ class Faq < ApplicationRecord
   validates :question, presence: true
   validates :answer, presence: true
   belongs_to :course_page
+  has_paper_trail
 end
