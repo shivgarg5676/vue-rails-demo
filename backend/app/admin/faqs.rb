@@ -13,6 +13,15 @@ ActiveAdmin.register Faq do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+form do |f|
+  f.inputs do
+    f.input :question
+    f.input :answer, :as => :ckeditor
+    f.input :seq_number
+    f.input :course_page,  :collection => [f.object.course_page], :include_blank => false
+  end
+  f.actions
+end
 
   controller do
     def permitted_params
