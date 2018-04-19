@@ -24,6 +24,18 @@ ActiveAdmin.register Faq do
     end
     f.actions
   end
+  show do 
+    attributes_table do
+      row :question 
+      row :answer do |faq|
+        raw(faq.answer)
+      end
+      row :sequence_number
+      row :created_at
+      row :modified_at
+      row :course_page
+    end
+  end
   
   member_action :history do
     @faq = Faq.find(params[:id])
