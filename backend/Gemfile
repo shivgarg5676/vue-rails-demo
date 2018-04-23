@@ -61,3 +61,4 @@ gem 'paperclip'
 gem 'ckeditor'
 
 gem 'paper_trail'
+gem 'rack-cors', :require => 'rack/cors'

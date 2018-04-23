@@ -8,7 +8,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/:program_name/',
+      path: '/:course_page_slug/',
       name: 'CoursePage',
       component: CoursePage
     }, {

@@ -13,6 +13,6 @@ class CoursePagesController < ApplicationController
   
   private 
     def set_course
-      @course_page = CoursePage.find_by_slug(params[:id])
+      @course_page = CoursePage.find_by_slug(params[:slug])
     end
 end
