@@ -5,19 +5,26 @@
     rendered course page compnent
     <div>
       {{this.name}}
-      <div v-for="faq in faqs"  :key="faq.id" v-text="faq.answer">
+      <div v-for="faq in faqs"  :key="faq.id" >
+          <html-render v-bind:price='price' v-bind:rhtml='faq.answer' />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import HtmlRender from './html-renderer.vue'
+
 export default {
   data () {
     return {
       name: this.$route.params.course_page_slug,
-      faqs: []
+      faqs: [],
+      price: 100
     }
+  },
+  components: {
+    HtmlRender
   },
   created () {
     this.fetchFaqs()
