@@ -6,6 +6,9 @@
     <div>
       {{this.name}}
       <div v-for="faq in faqs"  :key="faq.id" >
+          <div>
+            {{faq.question}}
+          </div>
           <html-render v-bind:price='price' v-bind:rhtml='faq.answer' />
       </div>
     </div>

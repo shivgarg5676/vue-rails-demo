@@ -17,19 +17,24 @@ export default {
     }
   },
   props: ['rhtml', 'price'],
-  mounted () {
-    var res = Vue.compile(this.rhtml)
-    this.template = res.render
-    // staticRenderFns belong into $options,
-    // appearantly
-    this.$options.staticRenderFns = []
-    // clean the cache of static elements
-    // this is a cache of the results from the staticRenderFns
-    this._staticTrees = []
-    // Fill it with the new staticRenderFns
-    for (var i in res.staticRenderFns) {
-      // staticRenderFns.push(res.staticRenderFns[i]);
-      this.$options.staticRenderFns.push(res.staticRenderFns[i])
+  watch: {
+    rhtml: {
+      immediate: true,
+      handler () {
+        var res = Vue.compile(this.rhtml)
+        this.template = res.render
+        // staticRenderFns belong into $options,
+        // appearantly
+        this.$options.staticRenderFns = []
+        // clean the cache of static elements
+        // this is a cache of the results from the staticRenderFns
+        this._staticTrees = []
+        // Fill it with the new staticRenderFns
+        for (var i in res.staticRenderFns) {
+          // staticRenderFns.push(res.staticRenderFns[i]);
+          this.$options.staticRenderFns.push(res.staticRenderFns[i])
+        }
+      }
     }
   }
 }
