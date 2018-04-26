@@ -56,3 +56,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'activeadmin'
+gem 'fast_jsonapi'
+gem 'paperclip'
+gem 'ckeditor'
+
+gem 'paper_trail'
+gem 'rack-cors', :require => 'rack/cors'

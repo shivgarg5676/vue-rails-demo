@@ -11,6 +11,12 @@ ActiveAdmin.register CoursePage do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+  sidebar "Course Page elements", only: [:show, :edit] do
+    ul do
+      li link_to "FAQ's", admin_course_page_faqs_path(resource)
+    
+    end
+  end
 
   controller do 
     def permitted_params
