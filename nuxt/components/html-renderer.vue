@@ -1,6 +1,6 @@
 <script>
 import Vue from 'vue';
-  import VueWithCompiler from "vue/dist/vue.esm";
+const compiler =  require("vue-template-compiler");
 
 export default {
   data () {
@@ -23,7 +23,7 @@ export default {
     rhtml: {
       immediate: true,
       handler () {
-        var res = VueWithCompiler.compile(this.rhtml)
+        var res = compiler.compileToFunctions(this.rhtml)
         this.template = res.render
         // staticRenderFns belong into $options,
         // appearantly

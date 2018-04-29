@@ -8,9 +8,10 @@
           <div>
             {{faq.question}}
         </div>
-        <no-ssr>
+        <html-render v-bind:price='price' v-bind:rhtml='faq.answer' />
+        <!-- <no-ssr>
             <html-render v-bind:price='price' v-bind:rhtml='faq.answer' />
-        </no-ssr>
+        </no-ssr> -->
       </div>
     </div>
   </div>
