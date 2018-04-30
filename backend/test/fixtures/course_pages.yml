@@ -8,6 +8,8 @@
 #  backend_key :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  price       :integer
+#  block_price :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

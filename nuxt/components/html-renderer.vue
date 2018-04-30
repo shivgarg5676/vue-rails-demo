@@ -18,7 +18,7 @@ export default {
       return this.template()
     }
   },
-  props: ['rhtml', 'price'],
+  props: ['rhtml', 'price','blockAmount'],
   watch: {
     rhtml: {
       immediate: true,
