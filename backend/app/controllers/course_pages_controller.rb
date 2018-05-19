@@ -8,7 +8,8 @@ class CoursePagesController < ApplicationController
   
   
   def show
-    render :json => CoursePageSerializer.new(@course_page, @options).serializable_hash
+    render :json => @course_page
+    #render :json => CoursePageSerializer.new(@course_page, @options).serializable_hash
   end
   
   private 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419002343) do
+ActiveRecord::Schema.define(version: 20180430055336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20180419002343) do
     t.string "backend_key"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.integer "block_price"
     t.index ["slug", "backend_key"], name: "index_course_pages_on_slug_and_backend_key", unique: true
   end
 
