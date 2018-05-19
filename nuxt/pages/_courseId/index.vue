@@ -8,7 +8,8 @@
         <div>
             {{faq.question}}
         </div>
-        <html-render v-bind:price='price' v-bind:rhtml='faq.answer' v-bind:blockAmount="blockAmount" />
+        <html-render v-bind:priceAction='price1' v-bind:price='price' v-bind:rhtml='faq.answer' v-bind:blockAmount="blockAmount" />
+        <button v-on:click="price1">Add 1</button>
       </div>
     </div>
   </div>
@@ -37,5 +38,10 @@ export default {
   components: {
     HtmlRender
   },
+  methods:{
+    price1: function(){
+      console.log(this.price)
+    }
+  }
 }
 </script>

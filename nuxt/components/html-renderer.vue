@@ -5,10 +5,8 @@ const compiler =  require("vue-template-compiler");
 export default {
   data () {
     return {
-      name: 'homepage',
       template: '',
       staticTempFunctions: [],
-      show: true
     }
   },
   render: function (createElement) {
@@ -18,12 +16,14 @@ export default {
       return this.template()
     }
   },
-  props: ['rhtml', 'price','blockAmount'],
+  props: ['rhtml'],
+  inheritAttrs: false,
   watch: {
     rhtml: {
       immediate: true,
       handler () {
-        var res = compiler.compileToFunctions(this.rhtml)
+        let rhtml = this.rhtml.replace(/{{(.+?)}}/, "{{this.$attrs.$1}}");
+        var res = compiler.compileToFunctions(rhtml)
         this.template = res.render
         // staticRenderFns belong into $options,
         // appearantly
