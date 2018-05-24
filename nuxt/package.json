@@ -15,6 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
     "express": "^4.15.3",
+    "mongoose": "^5.1.1",
     "nuxt": "^1.0.0",
     "vue-template-compiler": "^2.5.16"
   },

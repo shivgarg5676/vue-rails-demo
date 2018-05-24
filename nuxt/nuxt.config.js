@@ -42,16 +42,17 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios'
   ],
+  serverMiddleware: [{ path: '/api', handler: '~/server/routes.js' }],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    proxy: true
+    proxy: false
   },
 
   proxy: {
-    '/api/': { target: 'http://localhost:4000/', pathRewrite: {'^/api/': ''} }
+    // '/api/': { target: 'http://localhost:4000/', pathRewrite: {'^/api/': ''} }
   },
 
   /*
